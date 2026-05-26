@@ -1,101 +1,127 @@
-# Ex24 Topological Sort
-## DATE: 25/02/25
-## AIM:
-To compose the code to determine whether the topological ordering for the following graph is possible or not.
+# Ex24 Shortest Path and Reachability in a Heritage Town using BFS
 
-![image](https://github.com/user-attachments/assets/c74a7111-9b59-475c-aad4-9baf23d50ec0)
+## AIM:
+To design and implement a Python program that, given a map of attractions in a heritage town connected by walking paths, recommends:
+The shortest number of paths (minimum hops) from a starting attraction to a target attraction.
+The number of reachable attractions from the same starting point using Breadth-First Search (BFS)
 
 
 ## Algorithm
-1. Initialize variables: 
-   - Declare `i`, `v`, `count`, `topo_order[MAX]`, and `indeg[MAX]`.<br>
+1. Start the program.
+2. Read the number of attractions and initialize an adjacency list.
+3. Read the walking paths (edges) connecting attractions.
+4. Use BFS to find:
+
+   Shortest path (minimum hops) from start node to destination node using a distance array.
+
+   Reachability count, i.e., number of attractions reachable from the start.
+
+5. Initialize arrays for visited and distance, and a queue for BFS.
+6. Set the starting node as visited and enqueue it.
+7. While the queue is not empty:
    
-2. Create the graph: 
-   - Call `create_graph()` to initialize the graph structure.<br>
-   
-3. Calculate indegree for each vertex: 
-   - For each vertex `i` from `0` to `n-1`:<br>
-     - Calculate `indeg[i]` using `indegree(i)`.<br>
-     - If `indeg[i]` is `0`, insert vertex `i` into the queue using `insert_queue(i)`.<br>
-   
-4. Perform topological sorting: 
-   - Initialize `count` to `0`.<br>
-   - While the queue is not empty and `count` is less than `n`:<br>
-     - Remove vertex `v` from the queue using `delete_queue()`.<br>
-     - Add vertex `v` to `topo_order` at index `++count`.<br>
-     - For each vertex `i` from `0` to `n-1`:<br>
-       - If there is an edge from `v` to `i` (i.e., `adj[v][i] == 1`):<br>
-         - Remove the edge by setting `adj[v][i]` to `0`.<br>
-         - Decrease `indeg[i]` by `1`.<br>
-         - If `indeg[i]` becomes `0`, insert vertex `i` into the queue.<br>
-   
-5. Check for cycles: 
-   - If `count` is less than `n`, print "No topological ordering possible, graph contains cycle" and exit the program.<br>
-   
-6. Print the topological order: 
-   - Print "Vertices in topological order are:".<br>
-   - For each index `i` from `1` to `count`, print `topo_order[i]`.<br>
-   
-7. End the program: 
-   - Return `0` to indicate successful completion.<br>
+  Dequeue the current node.
+
+  For each adjacent node, if not visited, enqueue it and update its distance.
+
+8. After BFS completes:
+
+9. Display reachable attractions and count.
+
+10. Display the shortest distance to the destination node.
+
+11. Stop the program.
+
+
 ## Program:
 ```
 /*
-Program to determine whether the topological ordering for the following graph is possible or not
-Developed by:  T MOUNISH
-RegisterNumber: 212223240098
+Program to determine Shortest Path and Reachability in a Heritage Town using BFS
+Developed by: T MOUNISH
+RegisterNumber:  212223240098
 */
-int main()
-{
-        int i,v,count,topo_order[MAX],indeg[MAX];
 
-        create_graph();
+import java.util.*;
 
-        /*Find the indegree of each vertex*/
-        for(i=0;i<n;i++)
-        {
-                indeg[i] = indegree(i);
-                if( indeg[i] == 0 )
-                        insert_queue(i);
-        }
+public class HeritageTownBFS {
 
-        count = 0;
+    public static void bfs(int start, List<List<Integer>> graph, int n, int destination) {
+        boolean[] visited = new boolean[n];
+        int[] distance = new int[n];
+        Arrays.fill(distance, -1);
 
-        while(  !isEmpty_queue( ) && count < n )
-        {
-                v = delete_queue();
-        topo_order[++count] = v; /*Add vertex v to topo_order array*/
-                /*Delete all edges going from vertex v */
-                for(i=0; i<n; i++)
-                {
-                        if(adj[v][i] == 1)
-                        {
-                                adj[v][i] = 0;
-                                indeg[i] = indeg[i]-1;
-                                if(indeg[i] == 0)
-                                        insert_queue(i);
-                        }
+        Queue<Integer> queue = new LinkedList<>();
+        visited[start] = true;
+        distance[start] = 0;
+        queue.add(start);
+
+        int reachableCount = 0;
+
+        System.out.print("Reachable Attractions: ");
+
+        while (!queue.isEmpty()) {
+            int node = queue.poll();
+            System.out.print(node + " ");
+            reachableCount++;
+
+            for (int next : graph.get(node)) {
+                if (!visited[next]) {
+                    visited[next] = true;
+                    distance[next] = distance[node] + 1;
+                    queue.add(next);
                 }
+            }
         }
 
-        if( count < n )
-        {
-                printf("No topological ordering possible, graph contains cycle\n");
-                exit(1);
-        }
-        printf("Vertices in topological order are :\n");
-        for(i=1; i<=count; i++)
-                printf( "%d ",topo_order[i] );
-        printf("\n");
+        System.out.println("\nTotal reachable attractions: " + reachableCount);
 
-        return 0;
-}/*End of main()*/
+        if (distance[destination] != -1)
+            System.out.println("Shortest path (minimum hops) to attraction " + destination + ": " + distance[destination]);
+        else
+            System.out.println("Destination attraction is not reachable.");
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter number of attractions: ");
+        int n = sc.nextInt();
+        List<List<Integer>> graph = new ArrayList<>();
+
+        for (int i = 0; i < n; i++) {
+            graph.add(new ArrayList<>());
+        }
+
+        System.out.print("Enter number of walking paths: ");
+        int e = sc.nextInt();
+
+        System.out.println("Enter paths (attraction1 attraction2):");
+        for (int i = 0; i < e; i++) {
+            int u = sc.nextInt();
+            int v = sc.nextInt();
+            graph.get(u).add(v);
+            graph.get(v).add(u); // undirected
+        }
+
+        System.out.print("Enter starting attraction: ");
+        int start = sc.nextInt();
+
+        System.out.print("Enter destination attraction: ");
+        int destination = sc.nextInt();
+
+        bfs(start, graph, n, destination);
+        sc.close();
+    }
+}
 ```
 
 ## Output:
 
 
-![image](https://github.com/user-attachments/assets/8845165c-ad03-49d2-a955-1552731101e1)
+<img width="538" height="500" alt="image" src="https://github.com/user-attachments/assets/22aab9e8-b909-40ae-a930-5daf40fa40be" />
 
 ## Result:
-Thus, the C program for determining whether the topological ordering for the following graph is possible or not, is implemented successfully.
+The program has been successfully implemented and executed.
+It correctly computes:
+The shortest number of paths (minimum hops) between two attractions.
+The total number of reachable attractions from a given starting point using BFS traversal.
