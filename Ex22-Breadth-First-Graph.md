@@ -101,7 +101,7 @@ public class Main {
 ## Output:
 
 
-<img width="377" height="246" alt="image" src="https://github.com/user-attachments/assets/80a2e171-cc17-4b0f-803a-383e006cacd6" />
+<img width="1265" height="357" alt="image" src="https://github.com/user-attachments/assets/5b1e0d29-22bc-47ed-b91c-bb9831419015" />
 
 ## Result:
 The program has been successfully implemented and executed.
