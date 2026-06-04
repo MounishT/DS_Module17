@@ -102,7 +102,7 @@ class DijkstraEV {
 
 ## Output:
 
-<img width="648" height="443" alt="image" src="https://github.com/user-attachments/assets/f74c6b1a-a8ec-4902-90a4-eb79b0b08a4b" />
+<img width="1265" height="485" alt="image" src="https://github.com/user-attachments/assets/94c4011a-ba93-4777-9931-87e0331f45a5" />
 
 
 ## Result:
