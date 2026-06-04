@@ -85,7 +85,7 @@ public class BFS_CityJunction {
 
 ## Output:
 
-<img width="380" height="409" alt="image" src="https://github.com/user-attachments/assets/7cb1b1a7-7240-4dd7-b943-98732de3b18c" />
+<img width="1266" height="395" alt="image" src="https://github.com/user-attachments/assets/734251c8-9d92-4fe6-9233-345c71628542" />
 
 
 ## Result:
