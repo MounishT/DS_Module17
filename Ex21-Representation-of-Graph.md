@@ -100,7 +100,7 @@ public class LeftSubtreeCount {
 ```
 
 ## Output:
-<img width="381" height="365" alt="image" src="https://github.com/user-attachments/assets/4d2162ca-0629-4d9c-868f-1f45392e884b" />
+<img width="1266" height="289" alt="image" src="https://github.com/user-attachments/assets/468ec5ea-e864-49d0-bded-e26557c4c8e3" />
 
 
 
