@@ -118,7 +118,7 @@ public class HeritageTownBFS {
 ## Output:
 
 
-<img width="538" height="500" alt="image" src="https://github.com/user-attachments/assets/22aab9e8-b909-40ae-a930-5daf40fa40be" />
+<img width="1265" height="404" alt="image" src="https://github.com/user-attachments/assets/5092563e-d395-40af-8729-a7d7e1ca3cf0" />
 
 ## Result:
 The program has been successfully implemented and executed.
