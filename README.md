@@ -100,7 +100,7 @@ public class LeftSubtreeCount {
 ```
 
 ## Output:
-<img width="381" height="365" alt="image" src="https://github.com/user-attachments/assets/4d2162ca-0629-4d9c-868f-1f45392e884b" />
+<img width="1266" height="289" alt="image" src="https://github.com/user-attachments/assets/468ec5ea-e864-49d0-bded-e26557c4c8e3" />
 
 
 
@@ -212,7 +212,7 @@ public class Main {
 ## Output:
 
 
-<img width="377" height="246" alt="image" src="https://github.com/user-attachments/assets/80a2e171-cc17-4b0f-803a-383e006cacd6" />
+<img width="1265" height="357" alt="image" src="https://github.com/user-attachments/assets/5b1e0d29-22bc-47ed-b91c-bb9831419015" />
 
 ## Result:
 The program has been successfully implemented and executed.
@@ -306,7 +306,7 @@ public class BFS_CityJunction {
 
 ## Output:
 
-<img width="380" height="409" alt="image" src="https://github.com/user-attachments/assets/7cb1b1a7-7240-4dd7-b943-98732de3b18c" />
+<img width="1266" height="395" alt="image" src="https://github.com/user-attachments/assets/734251c8-9d92-4fe6-9233-345c71628542" />
 
 
 ## Result:
@@ -434,7 +434,7 @@ public class HeritageTownBFS {
 ## Output:
 
 
-<img width="538" height="500" alt="image" src="https://github.com/user-attachments/assets/22aab9e8-b909-40ae-a930-5daf40fa40be" />
+<img width="1265" height="404" alt="image" src="https://github.com/user-attachments/assets/5092563e-d395-40af-8729-a7d7e1ca3cf0" />
 
 ## Result:
 The program has been successfully implemented and executed.
@@ -547,7 +547,7 @@ class DijkstraEV {
 
 ## Output:
 
-<img width="648" height="443" alt="image" src="https://github.com/user-attachments/assets/f74c6b1a-a8ec-4902-90a4-eb79b0b08a4b" />
+<img width="1265" height="485" alt="image" src="https://github.com/user-attachments/assets/94c4011a-ba93-4777-9931-87e0331f45a5" />
 
 
 ## Result:
